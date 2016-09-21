@@ -61,14 +61,5 @@ cp -p bin/voglperfrun* %{buildroot}/%{_bindir}/
 %license LICENSE
 
 %changelog
-* Wed Feb 24 2016 Kamil Páral <kparal@redhat.com> - 0.2-4.20140925gita205e67
-- install library to /usr/lib*/voglperf
-
-* Wed Feb 24 2016 Kamil Páral <kparal@redhat.com> - 0.2-3.20140925gita205e67
-- clarify that non-steam games are also supported
-
-* Tue Feb 23 2016 Kamil Páral <kparal@redhat.com> - 0.2-2.20140925gita205e67
-- add BuildRequires:  gcc-c++
-
 * Fri Feb 19 2016 Kamil Páral <kparal@redhat.com> - 0.2-1.20140925gita205e67
-- initial release from 20140925 (git version)
+- initial release. Use git to track future changes to the spec file.
