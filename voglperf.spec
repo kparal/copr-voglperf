@@ -4,7 +4,7 @@
 
 Name:     voglperf
 Version:  0.2
-Release:  4.%{gitdate}git%{githash}%{?dist}
+Release:  5.%{gitdate}git%{githash}%{?dist}
 Summary:  Benchmarking tool for Linux OpenGL games. Spews frame information, logs frametimes.
 
 License:  MIT
@@ -13,6 +13,8 @@ Source0:  https://github.com/ValveSoftware/voglperf/archive/%{commit}/%{name}-%{
 
 # adjust libdir paths for the .so library
 Patch1:   voglperf-p01-libdir.patch
+# disable printing gcc version
+Patch2:   voglperf-p02-gccver.patch
 
 # this project only seems to support x86_64 and i386
 ExcludeArch:    armhfp
@@ -39,6 +41,7 @@ full path as an argument).
 %prep
 %setup -q -n %{name}-%{commit}
 %patch1 -p 1
+%patch2 -p 1
 
 %build
 make %{?_smp_mflags}
